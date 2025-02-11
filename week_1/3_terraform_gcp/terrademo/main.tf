@@ -1,3 +1,5 @@
+# Terraform file to create a Google Cloud Storage bucket
+
 terraform {
   required_providers {
     google = {
@@ -26,7 +28,7 @@ resource "google_storage_bucket" "demo-bucket" {
 
   lifecycle_rule {
     condition {
-      age = 1   
+      age = 1
     }
     action {
       type = "AbortIncompleteMultipartUpload"
