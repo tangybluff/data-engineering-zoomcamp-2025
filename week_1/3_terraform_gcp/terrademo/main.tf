@@ -13,3 +13,6 @@ provider "google" {
   project = "terraform-demo-450422"
   region  = "europe-southwest1"
 }
+
+# run terraform init to download the provider
+# Next step will be to create a bucket
