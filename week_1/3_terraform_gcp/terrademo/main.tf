@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "google" {
+    credentials = "./keys/my-creds.json"
   project = "terraform-demo-450422"
-  region  = "us-central1"
+  region  = "europe-southwest1"
 }
