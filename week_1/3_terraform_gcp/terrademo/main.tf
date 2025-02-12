@@ -12,8 +12,9 @@ terraform {
 # export GOOGLE_CREDENTIALS="path/to/your/credentials.json"
 # echo $GOOGLE_CREDENTIALS
 provider "google" {
-  project = "terraform-demo-450422"
-  region  = "europe-southwest1"
+  credentials = file(var.credentials)
+  project     = var.project
+  region      = var.region
 }
 
 # run terraform init to download the provider
@@ -22,8 +23,8 @@ provider "google" {
 # Variable in resource has to be globally unique; this means that the bucket name has to be unique across all Google Cloud Storage buckets
 # Name of the bucket can be project specific, for example, project name + bucket name or terraform will generate a random name
 resource "google_storage_bucket" "demo-bucket" {
-  name          = "terraform-demo-450422-terra-bucket"
-  location      = "EU"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -41,6 +42,9 @@ resource "google_storage_bucket" "demo-bucket" {
 
 # Part B
 resource "google_bigquery_dataset" "demo_dataset" {
-  dataset_id = "demo_dataset"
-location = var.Location
+  dataset_id = var.bq_dataset_name
+  location   = var.location
 }
+
+# terraform fmt to format the file
+# terraform plan to see the changes
