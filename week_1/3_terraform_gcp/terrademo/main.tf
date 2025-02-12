@@ -38,3 +38,9 @@ resource "google_storage_bucket" "demo-bucket" {
 
 # terraform plan to see the changes
 # terraform apply to apply the changes
+
+# Part B
+resource "google_bigquery_dataset" "demo_dataset" {
+  dataset_id = "demo_dataset"
+location = var.Location
+}
