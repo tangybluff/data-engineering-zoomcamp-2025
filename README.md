@@ -1,4 +1,4 @@
-# Data Engineering ZoomCamp 2025
+# Data Engineering Zoomcamp 2025
 
 ## Overview
 Data engineering involves the development and maintenance of architectures such as databases and large-scale processing systems. A data engineer is responsible for designing, building, and managing the infrastructure that allows for the collection, storage, and analysis of data. This role is crucial for ensuring that data is accessible, reliable, and ready for downstream consumption by data scientists and analysts.
